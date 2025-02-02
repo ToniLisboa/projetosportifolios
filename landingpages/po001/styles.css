@@ -12,45 +12,54 @@ header {
 }
 
 .hero {
-    background: #f4f4f4;
+    text-align: center;
     padding: 40px;
+    background: #f4f4f4;
 }
 
-.hero img {
-    max-width: 100%;
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 600px; /* Ajuste a largura conforme necessário */
+    margin: auto;
+}
+
+.carousel-container {
+    display: flex;
+    width: 600%;
+    animation: scroll 50s linear infinite; /* Define o tempo da rolagem */
+}
+
+.carousel-container img {
+    width: 100%;
     height: auto;
 }
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #ff4081;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.benefits, .testimonials, .form-section {
-    padding: 40px;
-}
-
-form input {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    padding: 10px;
-}
-
-form button {
-    background: #ff4081;
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
 }
 
-footer {
-    background: #333;
-    color: white;
-    padding: 10px;
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    16.66% { transform: translateX(0%); }
+    33.32% { transform: translateX(-100%); }
+    49.98% { transform: translateX(-200%); }
+    66.64% { transform: translateX(-300%); }
+    83.3% { transform: translateX(-400%); }
+    100% { transform: translateX(-500%); }
 }
